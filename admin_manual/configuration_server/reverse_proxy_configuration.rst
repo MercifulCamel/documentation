@@ -97,6 +97,16 @@ Traefik 2
       regex = "https://(.*)/.well-known/(card|cal)dav"
       replacement = "https://${1}/remote.php/dav/"
 
+
+using traefik.yaml
+
+http:
+  middlewares:
+    redirectRegex:
+       permanent: true
+       regex: "https://(.*)/.well-known/card|cal)dav"
+       replacement: "https://${1}remote.php/dav/"
+
 HAProxy
 ^^^^^^^
 ::
